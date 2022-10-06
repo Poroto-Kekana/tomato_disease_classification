@@ -4,7 +4,7 @@ from main import getPrediction
 import os
 
 #Save images to the 'static' folder as Flask serves images from this directory
-UPLOAD_FOLDER = 'C:/Users/PAKekana/OneDrive/Machine Learning/tomato_diseases/disease_classification/static/images'
+UPLOAD_FOLDER = 'static\images'
 
 #Create an app object using the Flask class. 
 app = Flask(__name__, static_folder="static")
@@ -25,9 +25,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #Here, index function is with '/', our root directory. 
 #Running the app sends us to index.html.
 #Note that render_template means it looks for the file in the templates folder. 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 #Add Post method to the decorator to allow for form submission. 
 @app.route('/', methods=['POST'])
@@ -52,4 +52,4 @@ def submit_file():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

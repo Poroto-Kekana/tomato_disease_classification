@@ -13,7 +13,7 @@ def getPrediction(filename):
     
     
     #Load model
-    my_model=load_model("C:/Users/PAKekana/OneDrive/Machine Learning/tomato_diseases/disease_classification/vgg16_model")
+    my_model=load_model("vgg16_model")
     
     SIZE = 224 #Resize to same size as training images
     img_path = "disease_classification/static/images/"+filename
