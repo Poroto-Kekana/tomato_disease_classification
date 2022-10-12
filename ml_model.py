@@ -29,6 +29,6 @@ def getPrediction(filename):
     pred_class = le.inverse_transform([np.argmax(pred)])[0]
     confidence = round(100 * (np.max(pred[0])), 2)
     print("Diagnosis is:", pred_class, confidence)
-    return pred_class, confidence
+    return {"pred_class" : pred_class, "confidence" : confidence}
     
     
